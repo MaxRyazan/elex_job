@@ -1,0 +1,158 @@
+.main_container{
+    width: 80%;
+    font-size: 18px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: inline-flex;
+}
+.note_container{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+.left_block{
+    width: 30%;
+}
+.right_block{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.border_green{
+    border: 1px solid green;
+}
+.input_title{
+    margin-bottom: 2vh;
+    height: 2.5vh;
+    font-size: 1.5vh;
+    border: 0.25vh solid lightgray;
+    width: 95%;
+    min-width: 120px;
+    border-radius: 6px;
+    outline: none;
+}
+.bold-text{
+    font-weight: bold;
+}
+.textarea{
+    font-size: 1.5vh;
+    border-radius: 6px;
+    border: 0.25vh solid lightgray;
+    width: 95%;
+    min-width: 120px;
+    outline: none;
+    height: 5.5vh;
+    resize: none;
+}
+.textarea:focus{
+    border: 0.25vh solid black;
+}
+.input_title:focus{
+    border: 0.25vh solid black;
+}
+.btn_blue{
+    border-radius: 6px;
+    background-color: #5e68ff;
+    border: none;
+    color: white;
+    padding: 1vh;
+    width: 10vh;
+    font-size: 1.5vh;
+    margin-top: 2vh;
+}
+.card_item_title{
+    position: relative;
+    font-weight: bold;
+    font-size: 1.8vh;
+    text-align: center;
+    padding-top: 2vh;
+}
+.card_item_description{
+    position: relative;
+    font-size: 2vh;
+    text-align: center;
+    margin-top: 5%;
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+.clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card{
+    word-wrap: break-word;
+    position: relative;
+    border: 0.25vh solid lightgray;
+    border-radius: 6px;
+    width: 26%;
+    min-width: 100px;
+    margin: 2vh;
+    height: 25vh;
+}
+.btn_delete{
+    border: 0.25vh solid darkred;
+    background-color: white;
+    color: darkred;
+    border-radius: 6px;
+    height: 3vh;
+    width: 10vh;
+    font-size: 1.4vh;
+}
+.flex{
+    width: 99%;
+    position: absolute;
+    bottom: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.btn_open{
+    border: 0.25vh solid blue;
+    background-color: white;
+    color: blue;
+    border-radius: 6px;
+    height: 3vh;
+    width: 10vh;
+    font-size: 1.4vh;
+
+}
+.note_path{
+    padding-bottom: 1vh;
+    font-size: 1.8vh;
+}
+.note_title{
+    padding-bottom: 2vh;
+    font-size: 2.3vh;
+}
+.note_desc{
+    font-size: 1.7vh;
+    white-space: pre-wrap;
+}
+.href_main{
+    color: #5e68ff;
+}
+@media screen and (max-width: 600px) {
+    .main_container{
+        width: 100%;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+    .right_block{
+        margin-top: 2vh;
+    }
+    .card{
+        margin: 0.5vh;
+    }
+}
+
+@media screen and (max-width: 1368px) {
+    .btn_open{
+        margin-bottom: 1vh;
+    }
+}
+
