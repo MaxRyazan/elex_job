@@ -6,7 +6,7 @@
       <input v-model="title" type="text" class="input_title">
       <div class="bold-text">Описание</div>
       <textarea v-model="description" class="textarea"></textarea>
-      <button :disabled="!isDataValid" class="btn_blue" @click="addNewNote">Добавить</button>
+      <button :disabled="!isDataValid"  class="btn_blue" @click="addNewNote">Добавить</button>
     </div>
     <div class="right_block">
       <app-note-list :notes="notes" @removeNote="removeNote" @openNote="openNote"></app-note-list>
@@ -18,6 +18,7 @@
 <script>
 import AppNoteList from "@/components/AppNoteList";
 import AppShowNote from "@/components/AppShowNote";
+import {ref, computed, onMounted} from "vue";
 
 class Note {
  constructor(id, noteTitle, noteDescription) {
@@ -28,61 +29,46 @@ class Note {
 }
 
 export default {
-  name: "AppMainPage",
   components: {AppNoteList, AppShowNote},
-  mounted() {
-    if(localStorage.getItem('notes') !== null) {
-      this.notes = JSON.parse (localStorage.getItem ("notes"));
+  setup() {
+    let notes = ref([])
+    let count = ref(0)
+    let title = ref('')
+    let description = ref('')
+
+    onMounted(() => {
+        if(localStorage.getItem('notes')) {
+         notes.value = JSON.parse (localStorage.getItem ("notes"));
+        }
+
+        if(localStorage.getItem('count')){
+          count.value = JSON.parse (localStorage.getItem ("count"));
+        } else {
+         count.value = 0
+        }
+    })
+
+    let increment = () => count.value++
+
+    const addNewNote = () => {
+      notes.value.push(new Note(increment(), title.value, description.value))
+      localStorage.setItem('notes', JSON.stringify(notes.value))
+      localStorage.setItem('count', JSON.stringify(count.value))
+      title.value = ''
+      description.value = ''
     }
-    if(localStorage.getItem('count') !== null){
-      this.count = JSON.parse (localStorage.getItem ("count"));
-    } else {
-      this.count = 0
+
+    const isDataValid = computed(() => title.value.length > 0 && description.value.length > 0)
+
+    const openNote = (id) => notes.value.filter(note => note.id === id)
+
+    const removeNote = (id) => {
+      notes.value = notes.value.filter(i => i.id !== id)
+      localStorage.setItem('notes', JSON.stringify(notes.value))
     }
-  },
 
-  data(){
-    return{
-      title: '',
-      description: '',
-      notes: [],
-      count: ''
-    }
-  },
-
-  methods:{
-    addNewNote(){
-      console.log(this.count)
-      this.notes.push(new Note(
-        this.increment(),
-          this.title,
-          this.description)
-      )
-      this.title = ''
-      this.description = ''
-      localStorage.setItem('notes', JSON.stringify(this.notes))
-      localStorage.setItem('count', JSON.stringify(this.count))
-    },
-
-    removeNote(id){
-      this.notes = this.notes.filter(i => i.id !== id)
-      localStorage.setItem('notes', JSON.stringify(this.notes))
-    },
-
-    openNote(id){
-      this.notes.filter(o => o.id === id)
-    },
-
-    increment(){
-     return this.count++
-    }
-  },
-
-  computed:{
-    isDataValid(){
-      return this.title.length > 0 && this.description.length > 0
-    }
+    return {notes, count, addNewNote, title, description, isDataValid, openNote, removeNote}
   }
-
 }
+
 </script>
