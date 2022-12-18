@@ -10,7 +10,7 @@ export default createRouter({
         path: '/', component: AppMainPage
         },
         {
-            path: '/:title', component: AppShowNote
+            path: '/:id', component: AppShowNote
         },
     ]
 })

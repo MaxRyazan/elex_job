@@ -70,7 +70,7 @@ export default {
     },
 
     openNote(id){
-      this.notes.filter(o => o.title === id)
+      this.notes.filter(o => o.id === id)
     },
 
     increment(){

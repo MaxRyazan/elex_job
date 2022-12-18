@@ -4,7 +4,7 @@
       <div class="card_item_description clamp">{{item.noteDescription}}</div>
       <div class="absolut">
         <div class="flex">
-          <router-link :to="'/' + item.noteTitle" class="card_href">
+          <router-link :to="'/' + item.id" class="card_href">
             <button class="btn_open" @click="$emit('openNote', item.id)">Открыть</button>
           </router-link>
           <button class="btn_delete" @click="$emit('removeNote', item.id)">Удалить</button>
