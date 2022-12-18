@@ -149,3 +149,34 @@
         margin-top: 2vw;
     }
 }
+
+@media (orientation: landscape) AND (min-width: 1500px) {
+    .card{
+        height: 20vw;
+    }
+    .card_item_title, .card_item_description, .btn_open, .btn_delete{
+        font-size: 1.2vw;
+    }
+    .btn_open, .btn_delete{
+        height: 2vw;
+        width: 8vw;
+    }
+    .input_title{
+        height: 2vw;
+        font-size: 1.2vw;
+    }
+    .textarea{
+        height: 4vw;
+        font-size: 1.2vw;
+    }
+    .btn_delete{
+        margin-top: 0.1vw;
+    }
+    .btn_blue{
+        padding: 1vw;
+        width: 9vw;
+        font-size: 1.1vw;
+        margin-top: 2vw;
+    }
+
+}
