@@ -7,10 +7,10 @@ export default createRouter({
     history: createWebHistory(),
     routes:[
         {
-        path: '/main/', component: AppMainPage
+        path: '/', component: AppMainPage
         },
         {
-            path: '/main/:title', component: AppShowNote
+            path: '/:title', component: AppShowNote
         },
     ]
 })

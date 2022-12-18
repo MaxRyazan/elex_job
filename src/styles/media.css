@@ -1,0 +1,105 @@
+@media (max-width: 1200px){
+.btn_open, .btn_delete{
+    font-size: 1.3vh;
+}
+    .card_href{
+        width: 48%;
+    }
+    .btn_delete{
+        width: 48%;
+    }
+    .right_block{
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 990px) {
+    .main_container{
+        width: 90%;
+        margin-left: 10%;
+    }
+    .right_block{
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 925px) {
+    .absolut{
+        bottom: 1vh;
+    }
+    .flex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card_href{
+        width: 80%;
+        margin-bottom: 0.5vh;
+    }
+    .btn_delete{
+        width: 80%;
+    }
+    .right_block{
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 880px) {
+    .left_block{
+        width: 45%;
+    }
+    .card{
+        width: 37%;
+    }
+}
+
+@media (max-width: 790px) {
+    .main_container{
+        width: 100%;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+    .right_block{
+        margin-top: 2vh;
+        width: 99%;
+        justify-content: space-around;
+    }
+    .left_block{
+        margin: 0 auto;
+        width: 60%;
+    }
+    .card{
+        margin: 1vh;
+        height: 30vh;
+        width: 20vh;
+        min-width: 200px;
+    }
+    .card_item_title.clamp{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 650px) {
+    .left_block{
+        width: 75%;
+    }
+}
+
+@media (max-width: 500px) {
+    .left_block {
+        width: 90%;
+    }
+}
+
+    @media (max-width: 240px) {
+        .card{
+           min-width: 99%;
+        }
+        h1{
+            font-size: 3vh;
+        }
+}

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import "@/styles/styles.css"
 import AppNoteList from "@/components/AppNoteList";
 import AppShowNote from "@/components/AppShowNote";
 
