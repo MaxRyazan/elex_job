@@ -95,11 +95,57 @@
     }
 }
 
-    @media (max-width: 240px) {
-        .card{
-           min-width: 99%;
-        }
-        h1{
-            font-size: 3vh;
-        }
+@media (max-width: 240px) {
+   .card{
+     min-width: 99%;
+   }
+  h1{
+     font-size: 3vh;
+  }
+}
+
+
+/*HORIZONTAL ORIENTATION*/
+
+@media (orientation: landscape) {
+    .main_container{
+        font-size: 1.7vw;
+    }
+    .card{
+        height: 25vw;
+    }
+    .card_item_title, .card_item_description, .btn_open, .btn_delete{
+        font-size: 1.7vw;
+    }
+    .btn_open, .btn_delete{
+        height: 3vw;
+        width: 10vw;
+    }
+    .btn_delete{
+        margin-top: 1vw;
+    }
+    .flex{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .card_href{
+        height: 3vw;
+        width: 100%;
+        position: relative;
+        justify-content: center;
+    }
+    .input_title{
+        height: 3vw;
+        font-size: 1.7vw;
+    }
+    .textarea{
+        height: 5vw;
+        font-size: 1.7vw;
+    }
+    .btn_blue{
+        padding: 1vw;
+        width: 10vw;
+        font-size: 1.5vw;
+        margin-top: 2vw;
+    }
 }
