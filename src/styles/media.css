@@ -1,15 +1,13 @@
 @media (max-width: 1200px){
-.btn_open, .btn_delete{
-    font-size: 1.3vh;
-}
-    .card_href{
-        width: 48%;
-    }
-    .btn_delete{
+    .btn_open, .btn_delete{
+        font-size: 1.3vh;
         width: 48%;
     }
     .right_block{
         justify-content: space-around;
+    }
+    .card{
+        min-width: 200px;
     }
 }
 
@@ -21,25 +19,25 @@
     .right_block{
         justify-content: space-around;
     }
+    .card{
+        min-width: 200px;
+    }
 }
 
 @media (max-width: 925px) {
-    .absolut{
-        bottom: 1vh;
-    }
     .flex{
         flex-direction: column;
         align-items: center;
     }
-    .card_href{
+    .btn_delete, .btn_open{
         width: 80%;
-        margin-bottom: 0.5vh;
-    }
-    .btn_delete{
-        width: 80%;
+        margin-top: 0.5vh;
     }
     .right_block{
         justify-content: space-around;
+    }
+    .card{
+        min-width: 200px;
     }
 }
 
@@ -49,6 +47,7 @@
     }
     .card{
         width: 37%;
+        min-width: 200px;
     }
 }
 
@@ -62,7 +61,7 @@
     }
     .right_block{
         margin-top: 2vh;
-        width: 99%;
+        width: 90%;
         justify-content: space-around;
     }
     .left_block{
@@ -87,11 +86,28 @@
     .left_block{
         width: 75%;
     }
+    .card{
+        min-width: 200px;
+    }
 }
 
 @media (max-width: 500px) {
+    .main_container{
+        margin: 0;
+        width: 90%;
+    }
+    .btn_blue{
+        margin-bottom: 30px;
+    }
+    .right_block{
+        width: 90%;
+        margin: 0 auto;
+    }
     .left_block {
         width: 90%;
+    }
+    .card{
+        min-width: 200px;
     }
 }
 
@@ -113,6 +129,7 @@
     }
     .card{
         height: 25vw;
+        min-width: 200px;
     }
     .card_item_title, .card_item_description, .btn_open, .btn_delete{
         font-size: 1.2vw;
@@ -120,19 +137,15 @@
     .btn_open, .btn_delete{
         height: 3vw;
         width: 10vw;
+        margin-top: 5px;
     }
-    .btn_delete{
-        margin-top: 0.7vw;
+    .card_item_description{
+       margin-top: 25%;
     }
+
     .flex{
         flex-direction: row;
         justify-content: space-around;
-    }
-    .card_href{
-        height: 3vw;
-        width: 100%;
-        position: relative;
-        justify-content: center;
     }
     .input_title{
         height: 3vw;
@@ -157,13 +170,8 @@
     .left_block{
         max-width: 300px;
     }
-    .card_href{
+    .btn_open, .btn_delete{
         width: 44%;
-        font-size: 1vw;
-        align-items: center;
-    }
-    .btn_open{
-        width: 100%;
         height: 1.7vw;
         font-size: 0.7vw;
     }
@@ -174,11 +182,7 @@
     .bold-text{
         font-size: 1.2vw;
     }
-    .btn_delete{
-        height: 1.7vw;
-        width: 44%;
-        font-size: 0.7vw;
-    }
+
     .input_title{
         height: 2vw;
         font-size: 1.2vw;
@@ -193,5 +197,39 @@
         font-size: 1.1vw;
         margin-top: 2vw;
     }
+}
+@media (orientation: landscape) AND (max-width: 655px) AND (max-height: 300px) {
+    .card_item_description{
+        font-size: 10px;
+        margin-top: 10px;
+    }
+    .card_item_title{
+        font-size: 10px;
+    }
+}
 
+@media (orientation: landscape) AND (max-width: 455px) AND (max-height: 300px) {
+    .card_item_description{
+        font-size: 8px;
+        margin-top: 10px;
+    }
+    .card_item_title{
+        font-size: 8px;
+    }
+}
+
+@media (orientation: landscape) AND (max-width: 395px) AND (max-height: 300px) {
+    .card_item_description{
+        font-size: 8px;
+        margin-top: 5px;
+    }
+    .card_item_title{
+        font-size: 8px;
+    }
+    .card_item_title.clamp{
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }

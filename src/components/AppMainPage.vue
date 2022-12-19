@@ -1,38 +1,33 @@
 <template>
   <div class="main_container">
-    <div class="left_block">
-      <h1>Заметки</h1>
-      <div class="bold-text">Заголовок</div>
-      <input v-model="title" type="text" class="input_title">
-      <div class="bold-text">Описание</div>
-      <textarea v-model="description" class="textarea"></textarea>
-      <button :disabled="!isDataValid"  class="btn_blue" @click="addNewNote">Добавить</button>
-    </div>
-    <div class="right_block">
+      <div class="left_block">
+          <h1>Заметки</h1>
+          <div class="bold-text">Заголовок</div>
+          <input v-model="title" type="text" class="input_title">
+          <div class="bold-text">Описание</div>
+          <textarea v-model="description" class="textarea"></textarea>
+          <app-button :disabled="!isDataValid"  :class="'btn_blue'" @click="addNewNote">Добавить</app-button>
+      </div>
       <app-note-list :notes="notes" @removeNote="removeNote" @openNote="openNote"></app-note-list>
-    </div>
   </div>
-  <app-show-note></app-show-note>
+  <note-view></note-view>
 </template>
 
 <script>
 import AppNoteList from "@/components/AppNoteList";
-import AppShowNote from "@/components/AppShowNote";
-import {ref, computed, onMounted} from "vue";
+import NoteView from "@/views/NoteView";
+import AppButton from "@/components/AppButton";
+import Note from "@/js/models";
 
-class Note {
- constructor(id, noteTitle, noteDescription) {
-   this.id = id
-   this.noteTitle = noteTitle
-   this.noteDescription = noteDescription
- }
-}
+import {ref, computed, onMounted} from "vue";
+import {useRouter} from 'vue-router'
 
 export default {
-  components: {AppNoteList, AppShowNote},
+  components: {AppButton, AppNoteList, NoteView},
   setup() {
+    const router = useRouter()
+    let count = 0
     let notes = ref([])
-    let count = ref(0)
     let title = ref('')
     let description = ref('')
 
@@ -42,32 +37,35 @@ export default {
         }
 
         if(localStorage.getItem('count')){
-          count.value = JSON.parse (localStorage.getItem ("count"));
+          count = JSON.parse (localStorage.getItem ("count"));
         } else {
-         count.value = 0
+         count = 0
         }
     })
 
-    let increment = () => count.value++
+    let increment = () => count++
 
     const addNewNote = () => {
       notes.value.push(new Note(increment(), title.value, description.value))
       localStorage.setItem('notes', JSON.stringify(notes.value))
-      localStorage.setItem('count', JSON.stringify(count.value))
+      localStorage.setItem('count', JSON.stringify(count))
       title.value = ''
       description.value = ''
     }
 
     const isDataValid = computed(() => title.value.length > 0 && description.value.length > 0)
 
-    const openNote = (id) => notes.value.filter(note => note.id === id)
+    const openNote = (id) => {
+      router.push('/' + id)
+      notes.value.filter(note => note.id === id)
+    }
 
     const removeNote = (id) => {
       notes.value = notes.value.filter(i => i.id !== id)
       localStorage.setItem('notes', JSON.stringify(notes.value))
     }
 
-    return {notes, count, addNewNote, title, description, isDataValid, openNote, removeNote}
+    return { notes, count, addNewNote, title, description, isDataValid, openNote, removeNote }
   }
 }
 

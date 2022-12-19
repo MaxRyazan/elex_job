@@ -45,6 +45,7 @@
     border-radius: 6px;
     border: 0.25vh solid lightgray;
     width: 95%;
+    padding: 10px;
     min-width: 120px;
     outline: none;
     height: 5.5vh;
@@ -110,25 +111,13 @@
     max-height: 30%;
 }
 
-.absolut{
-    width: 99%;
-    position: absolute;
-    bottom: 2vh;
-}
-
 .flex{
     width: 99%;
-    position: relative;
+    bottom: 2vh;
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-.card_href{
-    width: 40%;
-    height: 3vh;
-    display: flex;
-    text-decoration: none;
 }
 
 .btn_delete{
@@ -147,7 +136,7 @@
     color: blue;
     border-radius: 6px;
     height: 3vh;
-    width: 100%;
+    width: 40%;
     font-size: 1.4vh;
 }
 

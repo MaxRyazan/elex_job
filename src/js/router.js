@@ -1,16 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AppMainPage from "@/components/AppMainPage";
-import AppShowNote from "@/components/AppShowNote";
+import NoteView from "@/views/NoteView";
 
 
 export default createRouter({
     history: createWebHistory(),
     routes:[
         {
-        path: '/', component: AppMainPage
+            path: '/',
+            component: AppMainPage
         },
         {
-            path: '/:id', component: AppShowNote
+            path: '/:id',
+            component: NoteView
         },
     ]
 })
