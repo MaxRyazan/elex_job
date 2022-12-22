@@ -145,6 +145,11 @@ body {
   white-space: nowrap;
 }
 
+.note_container {
+  width: 80%;
+  margin: 5% 10%;
+}
+
 .note_path {
   padding-bottom: 5%;
   font-size: 16px;
