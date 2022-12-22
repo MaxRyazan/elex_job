@@ -7,31 +7,31 @@
     margin: 0 auto;
   }
 }
+
 @media (max-width: 845px) {
-  .main_container {
+  .main_container{
     width: 90%;
     justify-content: space-around;
   }
 }
+
 @media (max-width: 700px) {
-  .main_container {
+  .main_container{
     flex-direction: column;
   }
-  .card {
+  .card{
     height: 250px;
   }
-  .left_block {
+  .left_block{
     width: 99%;
     justify-content: center;
   }
-  .right_block {
+  .right_block{
     width: 99%;
     margin-top: 30px;
   }
-  .btn_blue {
+  .btn_blue{
     margin-left: 50%;
     transform: translate(-50%, 0);
   }
 }
-
-/*# sourceMappingURL=media.css.map */

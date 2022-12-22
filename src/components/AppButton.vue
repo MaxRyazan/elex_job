@@ -1,12 +1,11 @@
 <template>
-  <button :class="btn">
+  <button>
       <slot />
   </button>
 </template>
 
 <script>
 export default {
-  props:['btn'],
   name: "AppButton"
 }
 </script>

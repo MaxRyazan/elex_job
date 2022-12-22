@@ -1,0 +1,130 @@
+@import 'settings.scss';
+body{
+    font-size: 16px;
+}
+
+.main_container{
+    @extend %flex_f_wrap;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+            /* Left block start */
+.left_block{
+    width: 30%;
+}
+.span_title{
+    font-weight: 600;
+}
+.input_title {
+    @include width_height_pad_border_br(95%, _, 5px, lightgray, 6px, 16px);
+    margin-bottom: 5%;
+    min-width: 200px;
+    &:focus {
+        border: 1px solid black;
+    }
+}
+
+.textarea {
+    @include width_height_pad_border_br(95%, _, 5px, lightgray, 6px, 16px);
+    min-width: 200px;
+    min-height: 100px;
+    resize: none;
+    &:focus {
+        border: 1px solid black;
+    }
+}
+
+.btn_blue{
+    @include width_height_pad_border_br(_, _, 10px 20px, _, 6px, 16px);
+    background-color: #5e68ff;
+    color: white;
+    margin-top: 5%;
+}
+            /* Left block end */
+
+            /* Right block start */
+.right_block{
+    width: 70%;
+    justify-content: space-around;
+    @extend %flex_f_wrap
+}
+
+.card{
+    @extend %flex_f_wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    position: relative;
+    min-width: 120px;
+    max-height: 200px;
+    height: 40%;
+    margin: 10px;
+    @include width_height_pad_border_br(26%, 100%, 5px, lightgray, 6px, _);
+}
+
+.card_item_title{
+    position: relative;
+    font-weight: bold;
+    max-height: 30%;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px;
+    &.clamp{
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.card_item_description{
+    position: relative;
+    font-size: 16px;
+    text-align: center;
+    padding: 0 5%;
+    max-height: 30%;
+    &.clamp{
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.flex{
+    width: 99%;
+    margin: 5% 0;
+    max-height: 20%;
+    @extend %flex_f_wrap;
+    justify-content: space-around;
+}
+
+.btn_delete{
+    @include button(darkred, white, darkred, 6px, 14px);
+}
+
+.btn_open{
+    @include button(blue, white, blue, 6px, 14px);
+
+}
+
+
+.note_path{
+    padding-bottom: 5%;
+    font-size: 16px;
+}
+.note_title{
+    padding-bottom: 8%;
+    font-size: 18px;
+}
+.note_desc{
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+.href_main{
+    color: #5e68ff;
+}
+            /* Right block end */

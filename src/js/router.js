@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AppMainPage from "@/components/AppMainPage";
+import MainPageView from "@/views/MainPageView";
 import NoteView from "@/views/NoteView";
 
 
@@ -8,7 +8,7 @@ export default createRouter({
     routes:[
         {
             path: '/',
-            component: AppMainPage
+            component: MainPageView
         },
         {
             path: '/:id',

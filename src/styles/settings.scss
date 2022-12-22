@@ -1,0 +1,23 @@
+@mixin width_height_pad_border_br($w, $h, $p, $b, $br, $fsize){
+  width: $w;
+  height: $h;
+  padding: $p;
+  border:  1px solid $b;
+  border-radius: $br;
+  font-size: $fsize;
+  outline: none;
+}
+
+%flex_f_wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin button($border, $bgc, $color, $br, $fs){
+  border: 1px solid $border;
+  background-color: $bgc;
+  color: $color;
+  border-radius: $br;
+  font-size: $fs;
+  white-space: nowrap;
+}

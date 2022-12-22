@@ -1,158 +1,169 @@
-
-            /* Containers start */
-.main_container{
-    width: 80%;
-    font-size: 18px;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: inline-flex;
+.flex, .card, .right_block, .main_container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.note_container{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 5%;
-}
-            /* Containers end */
-
-            /* Left block start */
-.left_block{
-    width: 30%;
+body {
+  font-size: 16px;
 }
 
-.bold-text{
-    font-weight: bold;
+.main_container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.input_title{
-    margin-bottom: 2vh;
-    height: 2.5vh;
-    font-size: 1.5vh;
-    border: 0.25vh solid lightgray;
-    width: 95%;
-    min-width: 120px;
-    border-radius: 6px;
-    outline: none;
+/* Left block start */
+.left_block {
+  width: 30%;
 }
 
-.input_title:focus{
-    border: 0.25vh solid black;
+.span_title {
+  font-weight: 600;
 }
 
-.textarea{
-    font-size: 1.5vh;
-    border-radius: 6px;
-    border: 0.25vh solid lightgray;
-    width: 95%;
-    padding: 10px;
-    min-width: 120px;
-    outline: none;
-    height: 5.5vh;
-    resize: none;
+.input_title {
+  width: 95%;
+  height: _;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 5%;
+  min-width: 200px;
+}
+.input_title:focus {
+  border: 1px solid black;
 }
 
-.textarea:focus{
-    border: 0.25vh solid black;
+.textarea {
+  width: 95%;
+  height: _;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  min-width: 200px;
+  min-height: 100px;
+  resize: none;
+}
+.textarea:focus {
+  border: 1px solid black;
 }
 
-.btn_blue{
-    border-radius: 6px;
-    background-color: #5e68ff;
-    border: none;
-    color: white;
-    padding: 1vh;
-    width: 10vh;
-    font-size: 1.5vh;
-    margin-top: 2vh;
-}
-            /* Left block end */
-
-            /* Right block start */
-.right_block{
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
+.btn_blue {
+  width: _;
+  height: _;
+  padding: 10px 20px;
+  border: 1px solid _;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background-color: #5e68ff;
+  color: white;
+  margin-top: 5%;
 }
 
-.card{
-    word-wrap: break-word;
-    position: relative;
-    border: 0.25vh solid lightgray;
-    border-radius: 6px;
-    width: 26%;
-    min-width: 100px;
-    margin: 2vh;
-    height: 25vh;
+/* Left block end */
+/* Right block start */
+.right_block {
+  width: 70%;
+  justify-content: space-around;
 }
 
-.card_item_title{
-    position: relative;
-    font-weight: bold;
-    font-size: 1.8vh;
-    text-align: center;
-    padding-top: 2vh;
+.card {
+  flex-direction: column;
+  justify-content: space-between;
+  word-wrap: break-word;
+  position: relative;
+  min-width: 120px;
+  max-height: 200px;
+  height: 40%;
+  margin: 10px;
+  width: 26%;
+  height: 100%;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: _;
+  outline: none;
 }
 
-.clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.card_item_title {
+  position: relative;
+  font-weight: bold;
+  max-height: 30%;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
+}
+.card_item_title.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.card_item_description{
-    position: relative;
-    font-size: 2vh;
-    text-align: center;
-    margin-top: 5%;
-    padding-left: 1vh;
-    padding-right: 1vh;
-    max-height: 30%;
+.card_item_description {
+  position: relative;
+  font-size: 16px;
+  text-align: center;
+  padding: 0 5%;
+  max-height: 30%;
+}
+.card_item_description.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.flex{
-    width: 99%;
-    bottom: 2vh;
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.flex {
+  width: 99%;
+  margin: 5% 0;
+  max-height: 20%;
+  justify-content: space-around;
 }
 
-.btn_delete{
-    border: 0.25vh solid darkred;
-    background-color: white;
-    color: darkred;
-    border-radius: 6px;
-    height: 3vh;
-    width: 40%;
-    font-size: 1.4vh;
+.btn_delete {
+  border: 1px solid darkred;
+  background-color: white;
+  color: darkred;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
-.btn_open{
-    border: 0.25vh solid blue;
-    background-color: white;
-    color: blue;
-    border-radius: 6px;
-    height: 3vh;
-    width: 40%;
-    font-size: 1.4vh;
+.btn_open {
+  border: 1px solid blue;
+  background-color: white;
+  color: blue;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
-.note_path{
-    padding-bottom: 1vh;
-    font-size: 1.8vh;
+.note_path {
+  padding-bottom: 5%;
+  font-size: 16px;
 }
-.note_title{
-    padding-bottom: 2vh;
-    font-size: 2.3vh;
+
+.note_title {
+  padding-bottom: 8%;
+  font-size: 18px;
 }
-.note_desc{
-    font-size: 1.7vh;
-    white-space: pre-wrap;
+
+.note_desc {
+  font-size: 16px;
+  white-space: pre-wrap;
 }
-.href_main{
-    color: #5e68ff;
+
+.href_main {
+  color: #5e68ff;
 }
-            /* Right block end */
+
+/* Right block end */
+
+/*# sourceMappingURL=styles.css.map */

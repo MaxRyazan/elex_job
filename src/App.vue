@@ -1,10 +1,12 @@
 <template>
-  <router-view></router-view>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
-import '@/styles/styles.css'
-import '@/styles/media.css'
+import '@/styles/styles.scss'
+import '@/styles/media.scss'
 export default {
   name: 'App',
   components: {},
