@@ -38,7 +38,7 @@ body{
 }
 
 .btn_blue{
-    @include width_height_pad_border_br(_, _, 10px 20px, _, 6px, 16px);
+    @include width_height_pad_border_br(_, _, 10px 20px,  #5e68ff, 6px, 16px);
     background-color: #5e68ff;
     color: white;
     margin-top: 5%;
